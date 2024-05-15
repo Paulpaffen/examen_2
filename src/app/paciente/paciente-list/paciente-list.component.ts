@@ -13,6 +13,10 @@ export class PacienteListComponent implements OnInit {
   
   constructor(private pacienteService: PacienteService) { }
 
+  getMenoresDeEdadCount(): number {
+    return this.paciente.filter(p => p.edad < 18).length;
+  }
+  
   ngOnInit() {
     this.pacienteService.getPacientes()
       .subscribe(data => {

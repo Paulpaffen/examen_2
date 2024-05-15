@@ -1,17 +1,20 @@
 <div class="table-container">
   <div class="table-title">Pacientes</div>
-  <table>
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Edad</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let p of paciente">
-        <td>{{p.nombre}}</td>
-        <td>{{p.edad}}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-and-text">
+    <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Edad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of paciente">
+          <td>{{p.nombre}}</td>
+          <td>{{p.edad}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="menores">Número de menores: {{getMenoresDeEdadCount()}} </p>
+  </div>
 </div>

@@ -1,3 +1,9 @@
+<div *ngIf="selected">
+  <app-paciente-detail [PacienteDetail]="selectedPaciente"></app-paciente-detail>
+</div>
+
+<hr />
+
 <div class="table-container">
   <div class="table-title">Pacientes</div>
   <div class="table-and-text">
@@ -10,7 +16,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let p of paciente">
-          <td>{{p.nombre}}</td>
+          <td><a routerLink="['/detalle-paciente', p.id]">{{p.nombre}}</a></td>
           <td>{{p.edad}}</td>
         </tr>
       </tbody>

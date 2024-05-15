@@ -10,11 +10,19 @@ import { PacienteService } from '../paciente.service';
 export class PacienteListComponent implements OnInit {
 
   paciente: Array<Paciente> = [];
+  selectedPaciente!: Paciente;
+  selected: Boolean = false;
+
   
   constructor(private pacienteService: PacienteService) { }
 
   getMenoresDeEdadCount(): number {
     return this.paciente.filter(p => p.edad < 18).length;
+  }
+
+  onSelect(paciente: Paciente): void {
+    this.selectedPaciente = paciente;
+    this.selected = true;
   }
   
   ngOnInit() {
